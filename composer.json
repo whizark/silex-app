@@ -1,0 +1,28 @@
+{
+    "name"             : "whizark/silex-app",
+    "description"      : "A boilerplate for Silex application",
+    "version"          : "1.0.0",
+    "type"             : "package",
+    "keywords"         : [
+        "silex",
+        "boilerplate"
+    ],
+    "homepage"         : "http://whizark.com",
+    "license"          : "MIT",
+    "minimum-stability": "stable",
+    "authors"          : [
+        {
+            "name"    : "Whizark",
+            "homepage": "http://whizark.com",
+            "role"    : "Developer"
+        }
+    ],
+    "support"          : {
+        "email" : "contact@whizark.com",
+        "issues": "https://github.com/whizark/silex-app/isssues",
+        "source": "https://github.com/whizark/silex-app"
+    },
+    "require"          : {
+        "silex/silex": "~1.1"
+    }
+}
