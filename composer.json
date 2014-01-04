@@ -23,6 +23,7 @@
         "source": "https://github.com/whizark/silex-app"
     },
     "require"          : {
+        "php"        : ">=5.4.0",
         "silex/silex": "~1.1"
     }
 }
