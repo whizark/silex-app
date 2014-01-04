@@ -2,6 +2,7 @@
 namespace App;
 
 use Silex\Application as BaseApplication;
+use Silex\Application\TwigTrait;
 
 /**
  * Class Application
@@ -11,4 +12,5 @@ use Silex\Application as BaseApplication;
  */
 class Application extends BaseApplication
 {
+    use TwigTrait;
 }

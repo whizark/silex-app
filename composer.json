@@ -23,8 +23,9 @@
         "source": "https://github.com/whizark/silex-app"
     },
     "require"          : {
-        "php"        : ">=5.4.0",
-        "silex/silex": "~1.1"
+        "php"                : ">=5.4.0",
+        "silex/silex"        : "~1.1",
+        "symfony/twig-bridge": "~2.3"
     },
     "require-dev"      : {
         "phpunit/phpunit": "3.7.*",
