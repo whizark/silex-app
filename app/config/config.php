@@ -12,6 +12,11 @@ return function () use ($app) {
     $app['monolog.logfile'] = __DIR__ . '/../logs/prod.log';
     $app['monolog.name']    = 'App';
 
+    // Swift Mailer
+    $app['swiftmailer.options'] = [
+        'extraparams' => '-f%s',
+    ];
+
     // Bundle configurations
     call_user_func(require_once __DIR__ . '/../../src/App/DefaultBundle/Resources/config/config.php');
 };
