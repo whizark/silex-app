@@ -1,5 +1,6 @@
 <?php
 use Silex\Provider\TwigServiceProvider;
+use Silex\Provider\UrlGeneratorServiceProvider;
 
 return function () use ($app) {
     // Twig
@@ -12,6 +13,9 @@ return function () use ($app) {
             }
         )
     );
+
+    // UrlGenerator
+    $app->register(new UrlGeneratorServiceProvider());
 
     // Bundle configurations
     call_user_func(require_once __DIR__ . '/../../src/App/DefaultBundle/Resources/config/services.php');

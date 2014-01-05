@@ -3,6 +3,7 @@ namespace App;
 
 use Silex\Application as BaseApplication;
 use Silex\Application\TwigTrait;
+use Silex\Application\UrlGeneratorTrait;
 
 /**
  * Class Application
@@ -13,4 +14,5 @@ use Silex\Application\TwigTrait;
 class Application extends BaseApplication
 {
     use TwigTrait;
+    use UrlGeneratorTrait;
 }
