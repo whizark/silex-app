@@ -4,7 +4,8 @@ return function () use ($app) {
     $app['route_class'] = 'App\\Route';
 
     // Twig
-    $app['twig.path']   = __DIR__ . '/../Resources/views';
+    $app['twig.path']          = __DIR__ . '/../Resources/views';
+    $app['twig.options.debug'] = $app['debug'];
 
     // Monolog
     $app['monolog.logfile'] = __DIR__ . '/../logs/prod.log';
