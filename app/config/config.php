@@ -17,6 +17,9 @@ return function () use ($app) {
         'extraparams' => '-f%s',
     ];
 
+    // Service configuration
+    call_user_func(require_once __DIR__ . '/services.php');
+
     // Bundle configurations
     call_user_func(require_once __DIR__ . '/../../src/App/DefaultBundle/Resources/config/config.php');
 };

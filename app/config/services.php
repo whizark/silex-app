@@ -58,7 +58,4 @@ return function () use ($app) {
             return $transport;
         }
     );
-
-    // Bundle configurations
-    call_user_func(require_once __DIR__ . '/../../src/App/DefaultBundle/Resources/config/services.php');
 };
