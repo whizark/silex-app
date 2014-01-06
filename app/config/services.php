@@ -3,6 +3,7 @@ use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\MonologServiceProvider;
 use Silex\Provider\UrlGeneratorServiceProvider;
 use Silex\Provider\SwiftmailerServiceProvider;
+use Silex\Provider\ServiceControllerServiceProvider;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Routing\Loader\YamlFileLoader;
 use Symfony\Component\Routing\RouteCollection;
@@ -45,6 +46,9 @@ return function () use ($app) {
             }
         )
     );
+
+    // ServiceController
+    $app->register(new ServiceControllerServiceProvider());
 
     // Swift Mailer
     $app->register(new SwiftmailerServiceProvider());
