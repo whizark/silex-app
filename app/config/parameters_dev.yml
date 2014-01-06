@@ -6,3 +6,7 @@ twig.options.debug: true;
 
 # Monolog
 monolog.logfile: %app.root_dir%/app/logs/dev.log
+
+# Silex Web Profiler
+profiler.cache_dir: %app.root_dir%/app/cache/profiler
+profiler.mount_prefix: /_profiler
