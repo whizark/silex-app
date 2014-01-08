@@ -14,8 +14,9 @@ return function () use ($app) {
     $app['routes'] = $app->extend(
         'routes',
         function (RouteCollection $routes, $app) {
-            $loader     = new YamlFileLoader(new FileLocator(__DIR__));
-            $collection = $loader->load('routing.yml');
+            $loader      = new YamlFileLoader(new FileLocator(__DIR__));
+            $environment = $app['debug'] ? 'dev' : 'prod';
+            $collection  = $loader->load('routing_' . $environment . '.yml');
             $routes->addCollection($collection);
 
             return $routes;

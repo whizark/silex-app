@@ -1,0 +1,2 @@
+default__routes:
+  resource: routing.yml

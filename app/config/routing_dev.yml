@@ -1,0 +1,8 @@
+# Application route(s)
+_routes:
+  resource: routing.yml
+
+# Bundle route(s)
+default:
+  prefix: /
+  resource: ../../src/App/DefaultBundle/Resources/config/routing_dev.yml
