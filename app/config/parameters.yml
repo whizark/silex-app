@@ -1,0 +1,12 @@
+# Application
+route_class: App\Route
+
+# Twig
+twig.path: %app.root_dir%/app/Resources/views
+
+# Monolog
+monolog.name: App;
+
+# Swift Mailer
+swiftmailer.options:
+  extraparams: -f%s

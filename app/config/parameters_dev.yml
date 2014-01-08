@@ -1,0 +1,8 @@
+# Application
+debug: true;
+
+# Twig
+twig.options.debug: true;
+
+# Monolog
+monolog.logfile: %app.root_dir%/app/logs/dev.log

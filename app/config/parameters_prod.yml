@@ -1,0 +1,5 @@
+# Twig
+twig.options.cache: %app.root_dir%/app/cache/twig
+
+# Monolog
+monolog.logfile: %app.root_dir%/app/logs/prod.log

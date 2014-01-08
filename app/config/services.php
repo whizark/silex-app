@@ -6,6 +6,7 @@ use Silex\Provider\SwiftmailerServiceProvider;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Routing\Loader\YamlFileLoader;
 use Symfony\Component\Routing\RouteCollection;
+use Igorw\Silex\ConfigServiceProvider;
 
 return function () use ($app) {
     // Routes
@@ -72,5 +73,13 @@ return function () use ($app) {
 
             return $transport;
         }
+    );
+
+    // Config
+    $app->register(
+        new ConfigServiceProvider(
+            __DIR__ . '/parameters.yml',
+            $app['app.parameters']
+        )
     );
 };
