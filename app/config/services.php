@@ -26,28 +26,12 @@ return function () use ($app) {
 
     // Twig
     $app->register(new TwigServiceProvider());
-    $app['twig'] = $app->share(
-        $app->extend(
-            'twig',
-            function ($twig, $app) {
-                return $twig;
-            }
-        )
-    );
 
     // UrlGenerator
     $app->register(new UrlGeneratorServiceProvider());
 
     // Monolog
     $app->register(new MonologServiceProvider());
-    $app['monolog'] = $app->share(
-        $app->extend(
-            'monolog',
-            function ($monolog, $app) {
-                return $monolog;
-            }
-        )
-    );
 
     // ServiceController
     $app->register(new ServiceControllerServiceProvider());
