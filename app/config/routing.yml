@@ -1,0 +1,4 @@
+# Bundle routes
+default:
+  prefix: /
+  resource: ../../src/App/DefaultBundle/Resources/config/routing.yml

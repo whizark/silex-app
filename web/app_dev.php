@@ -17,6 +17,5 @@ Debug::enable();
 $app = new Application();
 
 call_user_func(require_once __DIR__ . '/../app/config/config_dev.php');
-call_user_func(require_once __DIR__ . '/../app/config/routing.php');
 
 $app->run();

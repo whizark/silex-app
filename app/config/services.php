@@ -3,8 +3,23 @@ use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\MonologServiceProvider;
 use Silex\Provider\UrlGeneratorServiceProvider;
 use Silex\Provider\SwiftmailerServiceProvider;
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\Routing\Loader\YamlFileLoader;
+use Symfony\Component\Routing\RouteCollection;
 
 return function () use ($app) {
+    // Routes
+    $app['routes'] = $app->extend(
+        'routes',
+        function (RouteCollection $routes, $app) {
+            $loader     = new YamlFileLoader(new FileLocator(__DIR__));
+            $collection = $loader->load('routing.yml');
+            $routes->addCollection($collection);
+
+            return $routes;
+        }
+    );
+
     // Twig
     $app->register(new TwigServiceProvider());
     $app['twig'] = $app->share(
