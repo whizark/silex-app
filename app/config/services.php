@@ -6,21 +6,22 @@ use Silex\Provider\SwiftmailerServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Routing\Loader\YamlFileLoader;
-use Symfony\Component\Routing\RouteCollection;
 use Igorw\Silex\ConfigServiceProvider;
 
 return function () use ($app) {
     // Routes
-    $app['routes'] = $app->extend(
-        'routes',
-        function (RouteCollection $routes, $app) {
-            $loader      = new YamlFileLoader(new FileLocator(__DIR__));
-            $environment = $app['debug'] ? 'dev' : 'prod';
-            $collection  = $loader->load('routing_' . $environment . '.yml');
-            $routes->addCollection($collection);
+    $app['routes'] = $app->share(
+        $app->extend(
+            'routes',
+            function ($routes, $app) {
+                $loader      = new YamlFileLoader(new FileLocator(__DIR__));
+                $environment = $app['debug'] ? 'dev' : 'prod';
+                $collection  = $loader->load('routing_' . $environment . '.yml');
+                $routes->addCollection($collection);
 
-            return $routes;
-        }
+                return $routes;
+            }
+        )
     );
 
     // Twig
