@@ -1,5 +1,7 @@
 # Application
 route_class: App\Route
+locale: en
+charset: UTF-8
 
 # Twig
 twig.path: %app.root_dir%/app/Resources/views

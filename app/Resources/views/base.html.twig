@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="{{ app.locale|escape('html_attr') }}">
+    <head>
+        <meta charset="{{ app.charset|escape('html_attr') }}">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}{{ (title is defined) ?: 'Silex Application' }}{% endblock %}</title>
+        {% if description is defined %}
+        <meta name="description" content="{{ description|escape('html_attr') }}">
+        {% endif %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+        {% block content %}
+        {{ (content is defined) ? content }}
+        {% endblock %}
+    </body>
+</html>
