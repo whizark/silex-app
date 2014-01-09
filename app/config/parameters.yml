@@ -3,6 +3,9 @@ route_class: App\Route
 locale: en
 charset: UTF-8
 
+# Translation
+locale_fallbacks: [en]
+
 # Twig
 twig.path: %app.root_dir%/app/Resources/views
 

@@ -1,11 +1,14 @@
 <?php
+use Silex\Provider\TranslationServiceProvider;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\MonologServiceProvider;
 use Silex\Provider\UrlGeneratorServiceProvider;
 use Silex\Provider\SwiftmailerServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
 use Symfony\Component\Config\FileLocator;
-use Symfony\Component\Routing\Loader\YamlFileLoader;
+use Symfony\Component\Finder\Finder;
+use Symfony\Component\Routing\Loader\YamlFileLoader as RoutingYamlFileLoader;
+use Symfony\Component\Translation\Loader\YamlFileLoader as TranslationYamlFileLoader;
 use Igorw\Silex\ConfigServiceProvider;
 
 return function () use ($app) {
@@ -14,12 +17,44 @@ return function () use ($app) {
         $app->extend(
             'routes',
             function ($routes, $app) {
-                $loader      = new YamlFileLoader(new FileLocator(__DIR__));
+                $loader      = new RoutingYamlFileLoader(new FileLocator(__DIR__));
                 $environment = $app['debug'] ? 'dev' : 'prod';
                 $collection  = $loader->load('routing_' . $environment . '.yml');
                 $routes->addCollection($collection);
 
                 return $routes;
+            }
+        )
+    );
+
+    // Translation
+    $app->register(new TranslationServiceProvider());
+    $app['translator'] = $app->share(
+        $app->extend(
+            'translator',
+            function ($translator, $app) {
+                $translator->addLoader('yaml', new TranslationYamlFileLoader());
+
+                $location = __DIR__ . '/../Resources/translations';
+                $finder   = new Finder();
+
+                $finder->files()
+                       ->ignoreVCS(true)
+                       ->name('*.yml')
+                       ->in($location);
+
+                foreach ($finder as $file) {
+                    list($domain, $locale) = explode('.', $file->getFilename());
+
+                    $translator->addResource(
+                        'yaml',
+                        $file,
+                        $locale,
+                        $domain
+                    );
+                }
+
+                return $translator;
             }
         )
     );

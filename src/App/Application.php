@@ -2,6 +2,7 @@
 namespace App;
 
 use Silex\Application as BaseApplication;
+use Silex\Application\TranslationTrait;
 use Silex\Application\TwigTrait;
 use Silex\Application\UrlGeneratorTrait;
 use Silex\Application\MonologTrait;
@@ -15,6 +16,7 @@ use Silex\Application\SwiftmailerTrait;
  */
 class Application extends BaseApplication
 {
+    use TranslationTrait;
     use TwigTrait;
     use UrlGeneratorTrait;
     use MonologTrait;
