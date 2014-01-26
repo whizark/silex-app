@@ -1,0 +1,14 @@
+app_home:
+  methods: [GET]
+  path: /
+  defaults:
+    _controller: App\AppBundle\Controller\PageController::show
+    slug: index
+
+app_page:
+  methods: [GET]
+  path: /{slug}
+  defaults:
+    _controller: App\AppBundle\Controller\PageController::show
+  requirements:
+    slug: .+

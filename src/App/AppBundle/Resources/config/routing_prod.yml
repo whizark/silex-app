@@ -1,2 +1,2 @@
-default__routes:
+app__routes:
   resource: routing.yml

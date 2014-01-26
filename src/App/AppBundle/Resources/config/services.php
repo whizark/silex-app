@@ -40,7 +40,7 @@ return function () use ($app) {
         $app->extend(
             'twig.loader.filesystem',
             function($filesystem, $app) {
-                $filesystem->addPath(__DIR__ . '/../views', 'default');
+                $filesystem->addPath(__DIR__ . '/../views', 'app');
 
                 return $filesystem;
             }

@@ -3,6 +3,6 @@ _routes:
   resource: routing.yml
 
 # Bundle route(s)
-default:
+app:
   prefix: /
-  resource: ../../src/App/DefaultBundle/Resources/config/routing_dev.yml
+  resource: ../../src/App/AppBundle/Resources/config/routing_dev.yml

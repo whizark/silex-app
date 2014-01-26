@@ -1,5 +1,5 @@
 <?php
-namespace App\DefaultBundle\Controller;
+namespace App\AppBundle\Controller;
 
 use App\Application;
 use Symfony\Component\HttpFoundation\Request;
@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Class PageController
  *
- * @package App\DefaultBundle\Controller
+ * @package App\AppBundle\Controller
  * @author  Whizark
  */
 class PageController extends Controller
@@ -23,6 +23,6 @@ class PageController extends Controller
      */
     public function show(Application $app, Request $request, $slug)
     {
-        return $app->render('@default/Page/' . $slug . '.html.twig');
+        return $app->render('@app/Page/' . $slug . '.html.twig');
     }
 }
