@@ -1,6 +1,20 @@
 # Application
 debug: true;
 
+# Doctrine
+# pdo_mysql, pdo_sqlite, pdo_pgsql, pdo_oci, oci8, ibm_db2, pdo_ibm, pdo_sqlsrv
+doctrine.drive: pdo_sqlite
+# doctrine.dbname: database
+# doctrine.host: localhost
+# doctrine.user: user
+# doctrine.password: password
+# pdo_mysql, and pdo_oci/oci8
+# doctrine.charset: UTF8
+# pdo_sqlite
+doctrine.path: %app.root_dir%/app.db
+# pdo_mysql, pdo_pgsql, pdo_oci/oci8
+# doctrine.port: 3306
+
 # Twig
 twig.options.debug: true;
 

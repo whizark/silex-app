@@ -1,4 +1,5 @@
 <?php
+use Silex\Provider\DoctrineServiceProvider;
 use Silex\Provider\TranslationServiceProvider;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\MonologServiceProvider;
@@ -26,6 +27,9 @@ return function () use ($app) {
             }
         )
     );
+
+    // Doctrine
+    $app->register(new DoctrineServiceProvider());
 
     // Translation
     $app->register(new TranslationServiceProvider());

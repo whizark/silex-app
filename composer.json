@@ -32,6 +32,7 @@
         "symfony/twig-bridge"          : "~2.3",
         "symfony/monolog-bridge"       : "~2.3",
         "swiftmailer/swiftmailer"      : ">=4.1.2,<4.2-dev",
+        "doctrine/dbal"                : "2.2.*",
         "igorw/config-service-provider": "~1.2"
     },
     "require-dev": {
