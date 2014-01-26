@@ -44,13 +44,12 @@ return function () use ($app) {
                        ->in($location);
 
                 foreach ($finder as $file) {
-                    list($domain, $locale) = explode('.', $file->getFilename());
+                    list($locale) = explode('.', $file->getFilename());
 
                     $translator->addResource(
                         'yaml',
                         $file,
-                        $locale,
-                        $domain
+                        $locale
                     );
                 }
 
