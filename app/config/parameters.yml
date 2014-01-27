@@ -1,7 +1,12 @@
+%locale%: en
+
 # Application
 route_class: App\Route
-locale: en
+locale: %locale%
 charset: UTF-8
+
+# Session
+session.default_locale: %locale%
 
 # Translation
 locale_fallbacks: [en]

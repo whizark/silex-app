@@ -6,6 +6,7 @@ use Silex\Provider\MonologServiceProvider;
 use Silex\Provider\UrlGeneratorServiceProvider;
 use Silex\Provider\SwiftmailerServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
+use Silex\Provider\SessionServiceProvider;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Routing\Loader\YamlFileLoader as RoutingYamlFileLoader;
@@ -30,6 +31,9 @@ return function () use ($app) {
 
     // Doctrine
     $app->register(new DoctrineServiceProvider());
+
+    // Session
+    $app->register(new SessionServiceProvider());
 
     // Translation
     $app->register(new TranslationServiceProvider());
