@@ -1,5 +1,6 @@
 <?php
 use Silex\Provider\DoctrineServiceProvider;
+use Silex\Provider\FormServiceProvider;
 use Silex\Provider\TranslationServiceProvider;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\MonologServiceProvider;
@@ -31,6 +32,9 @@ return function () use ($app) {
 
     // Doctrine
     $app->register(new DoctrineServiceProvider());
+
+    // Form
+    $app->register(new FormServiceProvider());
 
     // Session
     $app->register(new SessionServiceProvider());
