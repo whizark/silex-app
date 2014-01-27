@@ -15,9 +15,6 @@ doctrine.path: %app.root_dir%/app.db
 # pdo_mysql, pdo_pgsql, pdo_oci/oci8
 # doctrine.port: 3306
 
-# Twig
-twig.options.debug: true;
-
 # Monolog
 monolog.logfile: %app.root_dir%/app/logs/dev.log
 
