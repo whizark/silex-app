@@ -57,12 +57,13 @@ return function () use ($app) {
                        ->in($location);
 
                 foreach ($finder as $file) {
-                    list($locale) = explode('.', $file->getFilename());
+                    preg_match('/^(?<domain>.*?)\.?(?<locale>[^.]*)?$/u', $file->getBasename('.yml'), $matches);
 
                     $translator->addResource(
                         'yaml',
                         $file,
-                        $locale
+                        $matches['locale'],
+                        ($matches['domain'] !== '') ? $matches['domain'] : null
                     );
                 }
 

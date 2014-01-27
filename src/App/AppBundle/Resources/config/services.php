@@ -20,13 +20,13 @@ return function () use ($app) {
                        ->in($location);
 
                 foreach ($finder as $file) {
-                    list($domain, $locale) = explode('.', $file->getFilename());
+                    preg_match('/^(?<domain>.*?)\.?(?<locale>[^.]*)?$/u', $file->getBasename('.yml'), $matches);
 
                     $translator->addResource(
                         'yaml',
                         $file,
-                        $locale,
-                        $domain
+                        $matches['locale'],
+                        ($matches['domain'] !== '') ? $matches['domain'] : null
                     );
                 }
 
