@@ -8,6 +8,7 @@ use Silex\Provider\UrlGeneratorServiceProvider;
 use Silex\Provider\SwiftmailerServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
 use Silex\Provider\SessionServiceProvider;
+use Silex\Provider\ValidatorServiceProvider;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Routing\Loader\YamlFileLoader as RoutingYamlFileLoader;
@@ -128,6 +129,9 @@ return function () use ($app) {
             }
         )
     );
+
+    // Validator
+    $app->register(new ValidatorServiceProvider());
 
     // Config
     $app->register(
