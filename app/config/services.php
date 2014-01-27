@@ -64,6 +64,20 @@ return function () use ($app) {
 
     // Twig
     $app->register(new TwigServiceProvider());
+    $app['twig'] = $app->share(
+        $app->extend(
+            'twig',
+            function ($twig, $app) {
+                $twig->addFunction(
+                    new Twig_SimpleFunction('asset', function ($asset) use ($app) {
+                        return sprintf('%s/%s', $app['request']->getBasePath(), ltrim($asset, '/'));
+                    })
+                );
+
+                return $twig;
+            }
+        )
+    );
 
     // UrlGenerator
     $app->register(new UrlGeneratorServiceProvider());
