@@ -15,3 +15,4 @@ A Symfony2-like structured Silex skeleton / boilerplate / template.
  * Twig
  * UrlGenerator
  * Validator
+ * WebProfiler
