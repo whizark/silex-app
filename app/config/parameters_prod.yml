@@ -8,7 +8,7 @@ doctrine.drive: pdo_sqlite
 # pdo_mysql, and pdo_oci/oci8
 # doctrine.charset: UTF8
 # pdo_sqlite
-doctrine.path: %app.root_dir%/app_dev.db
+doctrine.path: %app.root_dir%/app.db
 # pdo_mysql, pdo_pgsql, pdo_oci/oci8
 # doctrine.port: 3306
 
