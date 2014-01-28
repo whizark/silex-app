@@ -1,0 +1,8 @@
+# Application route(s)
+_routes:
+  resource: routing.yml
+
+# Bundle route(s)
+app:
+  prefix: /
+  resource: ../../src/App/AppBundle/Resources/config/routing_test.yml

@@ -1,0 +1,10 @@
+app__routes:
+  resource: routing.yml
+
+app_page:
+  methods: [GET]
+  path: /{slug}
+  defaults:
+    _controller: App\AppBundle\Controller\PageController::show
+  requirements:
+    slug: .+

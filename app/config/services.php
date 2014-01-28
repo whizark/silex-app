@@ -23,6 +23,7 @@ return function () use ($app) {
             function ($routes, $app) {
                 $loader      = new RoutingYamlFileLoader(new FileLocator(__DIR__));
                 $environment = $app['debug'] ? 'dev' : 'prod';
+                $environment = (isset($app['test']) && $app['test']) ? 'test' : $environment;
                 $collection  = $loader->load('routing_' . $environment . '.yml');
                 $routes->addCollection($collection);
 
