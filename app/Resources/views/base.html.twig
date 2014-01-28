@@ -3,7 +3,7 @@
     <head>
         <meta charset="{{ app.charset|escape('html_attr') }}">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>{% block title %}{{ (title is defined) ?: 'Silex Application' }}{% endblock %}</title>
+        <title>{% block title %}{{ (title is defined) ?: 'Application' }}{% endblock %}</title>
         {% if description is defined %}
         <meta name="description" content="{{ description|escape('html_attr') }}">
         {% endif %}
