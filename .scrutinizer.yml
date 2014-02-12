@@ -115,7 +115,7 @@ tools:
 
   # PHP HHVM
   php_hhvm:
-    enabled: true
+    enabled: false
 
   # SensioLabs Security Checker
   sensiolabs_security_checker:
