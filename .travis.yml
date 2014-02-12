@@ -10,3 +10,6 @@ before_script:
 
 script:
   - phpunit --colors --verbose --coverage-clover build/logs/clover.xml
+
+after_script:
+  - vendor/bin/coveralls --verbose
